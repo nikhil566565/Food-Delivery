@@ -1,0 +1,142 @@
+/* Promotion section */
+.promotion-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f3f4f6;
+}
+
+.promotion-container {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.promotion-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.promotion-image-column {
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.promotion-content-column {
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promotion-image {
+  width: 100%;
+  max-width: 448px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.promotion-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.promotion-dot {
+  color: #3b82f6;
+}
+
+.promotion-badge {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.promotion-highlight {
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.promotion-description {
+  margin-bottom: 24px;
+}
+
+.promotion-app-links {
+  display: flex;
+  gap: 16px;
+}
+
+.promotion-app-link {
+  display: block;
+}
+
+.promotion-store-badge {
+  height: 40px;
+}
+
+/* Media query for medium screens and above */
+@media (min-width: 768px) {
+  .promotion-flex-container {
+    flex-direction: row;
+  }
+
+  .promotion-image-column {
+    width: 50%;
+  }
+
+  .promotion-content-column {
+    width: 50%;
+  }
+}
+
+/* Youtube Icon */
+.youtube-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.youtube-button {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.youtube-button:hover {
+  transform: translateY(12px);
+  border-radius: 50%;
+}
+
+.youtube-button-text {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.youtube-button:hover .youtube-button-text {
+  opacity: 1;
+  color: #333;
+  font-size: 20px;
+  transform: translateY(-33px);
+}
