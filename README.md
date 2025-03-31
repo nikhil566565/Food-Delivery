@@ -5,19 +5,19 @@ This is a **Food Delivery Web Application** built using the **React Js**
 ## 📸 Screenshots
 
 ### 🔹 Home Page
-![Home Page](src/Components/assets/Food-app-images/home.png)
+![Home Page](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/home.png)
 
 ### 🔹 Menu Page
-![Menu Page](src/Components/assets/Food-app-images/menu.png)
+![Menu Page](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/menu.png)
 
 ### 🔹 About Us Page
-![About Us](src/Components/assets/Food-app-images/about%20(2).png)
+![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/about%20(2).png)
 
 ### 🔹 Contact Page
-![About Us](src/Components/assets/Food-app-images/contact.png)
+![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/contact.png)
 
 ### 🔹 Login Page
-![About Us](src/Components/assets/Food-app-images/login.png)
+![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/login.png)
 
 ## 🚀 Installation & Setup
 
