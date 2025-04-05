@@ -1,6 +1,6 @@
 # 🍔 Food Delivery - MERN Stack Project
 
-### 🔗 Live Website: https://food-delivery-pro.netlify.app/
+### 🔗 Live Website: https://food-delivery-sit.netlify.app/ 
 This is a **Food Delivery Web Application** built using the **React Js**
 ## 📸 Screenshots
 
