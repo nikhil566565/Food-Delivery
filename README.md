@@ -16,6 +16,9 @@ This is a **Food Delivery Web Application** built using the **React Js**
 ### 🔹 Contact Page
 ![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/contact.png)
 
+### 🔹 Cart Page
+![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/cart.png)
+
 ### 🔹 Login Page
 ![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/login.png)
 
