@@ -5,22 +5,22 @@ This is a **Food Delivery Web Application** built using the **React Js**
 ## 📸 Screenshots
 
 ### 🔹 Home Page
-![Home Page](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/home.png)
+![Home Page](./frontend/myapp/src/Components/assets/Food-app-images/home.png)
 
 ### 🔹 Menu Page
-![Menu Page](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/menu.png)
+![Menu Page](./fronend/myapp/src/Components/assets/Food-app-images/menu.png)
 
 ### 🔹 About Us Page
-![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/about%20(2).png)
+![About Us](./fronend/myapp/src/Components/assets/Food-app-images/about%20(2).png)
 
 ### 🔹 Contact Page
-![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/contact.png)
+![About Us](./fronend/myapp/src/Components/assets/Food-app-images/contact.png)
 
 ### 🔹 Cart Page
-![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/cart.png)
+![About Us](./fronend/myapp/src/Components/assets/Food-app-images/cart.png)
 
 ### 🔹 Login Page
-![About Us](./Food%20Delivery/fronend/myapp/src/Components/assets/Food-app-images/login.png)
+![About Us](./fronend/myapp/src/Components/assets/Food-app-images/login.png)
 
 ## 🚀 Installation & Setup
 
