@@ -1,4 +1,3 @@
-
 .food-item-section-container {
   max-width: 90%;
   margin: 0 auto;
@@ -35,7 +34,7 @@
 }
 
 .food-item-section-category-btn.food-item-section-active {
-  background-color: #FF0000;
+  background-color: #ff0000;
   color: white;
 }
 
@@ -104,10 +103,22 @@
   font-size: 1.125rem;
   margin: 0;
 }
-
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .food-item-section-price {
   font-weight: bold;
   color: #ff7a00;
+  /* text-decoration: line-through; */
+  margin: 0;
+}
+.food-item-section-price-discount {
+  font-weight: bold;
+  font-size: 13px;
+  color: #ca8647;
+  text-decoration: line-through;
   margin: 0;
 }
 
@@ -152,7 +163,6 @@
   background-color: #ff7a00;
   transform: scale(1.1);
 }
-
 
 .food-item-section-toast {
   position: fixed;

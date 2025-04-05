@@ -10,7 +10,7 @@ function Navbar() {
     const [showLogin, setShowLogin] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate()
-    // This code is navbar Logout dropdown....
+
     useEffect(() => {
         // user is logged in (from localStorage)
         const user = localStorage.getItem("userLoggedIn");
@@ -52,12 +52,12 @@ function Navbar() {
                         {!isLoggedIn ?
                             (<Link to="/login">
                                 <button className="search-button"> Login</button>
-                            </Link>) : (<a href="#" class="navbar-custom-btn">
+                            </Link>) : (<div className="navbar-custom-btn">
                                 <img src={avtar} alt='avtar-img' />
                                 <div className="navbar-dropdown-menu">
-                                    <a href="#" className="navbar-dropdown-item" onClick={handleLogout}>Logout</a>
+                                    <button className="navbar-dropdown-item" onClick={handleLogout}>Logout</button>
                                 </div>
-                            </a>)
+                            </div>)
                         }
                         <button className="navbar-menu-btn" onClick={toggleNavbar}> &#9776; </button>
                     </div>

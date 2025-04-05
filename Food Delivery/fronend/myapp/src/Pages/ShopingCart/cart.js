@@ -1,10 +1,21 @@
 import { useState, useEffect } from "react"
 import { Trash } from "lucide-react"
+import { useNavigate } from "react-router-dom";
 import "./cart.css"
 import { useCart } from "../../Components/Fooditem/cartContext"
 export default function ShoppingCart() {
-    const { cartItems, updateQuantity, removeItem, clearCart } = useCart()
+    const navigate = useNavigate();
+    useEffect(() => {
+        // Check if user is logged in
+        const isUserLoggedIn = localStorage.getItem("userLoggedIn");
 
+        if (!isUserLoggedIn || isUserLoggedIn !== "true") {
+            // Redirect to login page if not logged in
+            navigate("/login");
+        }
+    }, [navigate]);
+
+    const { cartItems, updateQuantity, removeItem, clearCart } = useCart()
     // Customer information state
     const [customerInfo, setCustomerInfo] = useState({
         name: "",
@@ -43,7 +54,6 @@ export default function ShoppingCart() {
     // Modal state
     const [showModal, setShowModal] = useState(false)
 
-    // Calculate totals whenever cart items or delivery method changes
     useEffect(() => {
         calculateTotals()
     }, [cartItems, deliveryMethod])
@@ -88,17 +98,17 @@ export default function ShoppingCart() {
         })
     }
 
-    // Handle delivery method change
+    // Handle delivery method 
     const handleDeliveryMethodChange = (e) => {
         setDeliveryMethod(e.target.value)
     }
 
-    // Handle payment method change
+    // Handle payment method 
     const handlePaymentMethodChange = (e) => {
         setPaymentMethod(e.target.value)
     }
 
-    // Handle quantity change - now using the context function
+    // Handle quantity change 
     const handleQuantityChange = (id, newQuantity) => {
         if (newQuantity < 1) newQuantity = 1
         updateQuantity(id, newQuantity)
@@ -106,7 +116,6 @@ export default function ShoppingCart() {
 
     // Place order
     const placeOrder = () => {
-        // Validate required fields
         if (!customerInfo.name || !customerInfo.phone) {
             alert("Please fill in all required fields")
             return
@@ -133,7 +142,7 @@ export default function ShoppingCart() {
                 <h1 className="add-to-cart-title">Placing an order</h1>
 
                 <div className="add-to-cart-grid">
-                    {/* Left Column - Customer Information */}
+                    {/* Left Column - Customer Info */}
                     <div className="add-to-cart-column">
                         <section className="add-to-cart-section">
                             <h3 className="add-to-cart-heading">Contacts</h3>
@@ -148,13 +157,7 @@ export default function ShoppingCart() {
                                 <label htmlFor="phone" className="add-to-cart-label">
                                     Phone
                                 </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    placeholder="+91 __ ___ __ __"
-                                    className="add-to-cart-input"
-                                    required
-                                    value={customerInfo.phone}
+                                <input type="tel" id="phone" placeholder="+91 __ ___ __ __" className="add-to-cart-input" required value={customerInfo.phone}
                                     onChange={handleCustomerInfoChange}
                                 />
                             </div>
@@ -163,15 +166,8 @@ export default function ShoppingCart() {
                         <section className="add-to-cart-section">
                             <h3 className="add-to-cart-heading">Method of delivery</h3>
                             <div className="add-to-cart-radio-group">
-                                <input
-                                    type="radio"
-                                    id="delivery"
-                                    name="deliveryMethod"
-                                    value="delivery"
-                                    className="add-to-cart-radio"
-                                    checked={deliveryMethod === "delivery"}
-                                    onChange={handleDeliveryMethodChange}
-                                />
+                                <input type="radio" id="delivery" name="deliveryMethod" value="delivery" className="add-to-cart-radio"
+                                    checked={deliveryMethod === "delivery"} onChange={handleDeliveryMethodChange} />
                                 <label htmlFor="delivery" className="add-to-cart-radio-label">
                                     Delivery to the address
                                 </label>

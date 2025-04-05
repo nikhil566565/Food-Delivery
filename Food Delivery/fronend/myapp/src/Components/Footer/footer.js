@@ -1,5 +1,6 @@
 import React from 'react'
 import './footer.css'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
@@ -28,17 +29,17 @@ function Footer() {
 
                         {/* <!-- Links Grid --> */}
                         <div className="footer-bar-links-grid">
-                            {/* <!-- Column 1 --> */}
+                            {/* <!-- Col- 1 --> */}
                             <div className="footer-bar-link-column">
                                 <h3 className="footer-bar-column-title">Useful Links</h3>
                                 <ul className="footer-bar-link-list">
-                                    <li><a href="#" className="footer-bar-link">Terms and conditions</a></li>
-                                    <li><a href="#" className="footer-bar-link">Privacy</a></li>
-                                    <li><a href="#" className="footer-bar-link">Modern Slavery Statement</a></li>
+                                    <li><Link to="/" className="footer-bar-link">Home</Link></li>
+                                    <li><Link to="/menu" className="footer-bar-link">Menu</Link></li>
+                                    <li><Link to="/contact" className="footer-bar-link">Contact</Link></li>
                                 </ul>
                             </div>
 
-                            {/* <!-- Column 3 --> */}
+                            {/* <!-- Col 2 --> */}
                             <div className="footer-bar-link-column">
                                 <h3 className="footer-bar-column-title">Opening Hours</h3>
                                 <ul className="footer-bar-link-list">
@@ -48,7 +49,7 @@ function Footer() {
                                 </ul>
                             </div>
 
-                            {/* <!-- Column 4 --> */}
+                            {/* <!-- Col 3 --> */}
                             <div className="footer-bar-link-column">
                                 <h3 className="footer-bar-column-title">Contact</h3>
                                 <ul className="footer-bar-link-list">
@@ -65,9 +66,6 @@ function Footer() {
                     <div className="footer-bar-copyright">
                         <p>Zomato. Copyright 2025. All Rights Reserved.</p>
                         <div className="footer-bar-legal-links">
-                            <a href="#" className="footer-bar-legal-link">Privacy Policy</a>
-                            <a href="#" className="footer-bar-legal-link">Terms</a>
-                            <a href="#" className="footer-bar-legal-link">Pricing</a>
                             <a href="#" className="footer-bar-legal-link">Do not sell or share my personal information</a>
                         </div>
                     </div>

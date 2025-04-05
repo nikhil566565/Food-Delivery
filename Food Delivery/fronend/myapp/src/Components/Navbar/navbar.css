@@ -196,22 +196,25 @@ body {
   position: absolute;
   top: 41px;
   left: 0;
+  align-items: center;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100px;
+  width: 70px;
   text-align: center;
   padding: 5px 0;
   z-index: 100;
 }
 
-/* Dropdown Item */
+
 .navbar-dropdown-item {
   display: block;
+  border: none;
   padding: 8px 10px;
   color: #333;
   text-decoration: none;
+  background: transparent;
   font-size: 14px;
   transition: background 0.2s ease-in-out;
 }

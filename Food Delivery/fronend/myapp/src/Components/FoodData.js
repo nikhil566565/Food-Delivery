@@ -1,0 +1,176 @@
+const foodItems = [
+    {
+        id: 1,
+        name: "Royal Cheese Burger with extra Fries",
+        price: 99,
+        description: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries, 3 cold drinks",
+        image: "https://i.ytimg.com/vi/SvOx7tA_Cv8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAUi4DTtB9e2mnIAe3JoxUoj6nbNA",
+        rating: 4.8,
+        category: "burger",
+    },
+    {
+        id: 2,
+        name: "The Gramercy Tavern Burger - 4 Pack",
+        price: 109,
+        description: "Premium beef patty with special sauce, lettuce, cheese, pickles, onions on a sesame seed bun. Comes with fries and drink.",
+        image: "https://rhubarbandcod.com/wp-content/uploads/2022/06/The-Classic-Cheeseburger-1.jpg",
+        rating: 4.9,
+        category: "burger",
+    },
+    {
+        id: 3,
+        name: "Margherita Pizza",
+        price: 499,
+        description: "Classic delight with 100% real mozzarella cheese and fresh tomato sauce on a crispy base",
+        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1000",
+        rating: 4.5,
+        category: "pizza",
+    },
+    {
+        id: 4,
+        name: "Pepperoni Pizza",
+        price: 249,
+        description: "A classic favorite with spicy pepperoni, mozzarella, and tomato sauce",
+        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1000",
+        rating: 4.7,
+        category: "pizza",
+    },
+    {
+        id: 5,
+        name: "Spaghetti Carbonara",
+        price: 199,
+        description: "Creamy pasta with pancetta, egg, parmesan cheese, and black pepper",
+        image: "https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=1000",
+        rating: 4.6,
+        category: "pasta",
+    },
+    {
+        id: 6,
+        name: "California Roll",
+        price: 699,
+        description: "Crab, avocado, and cucumber wrapped in seaweed and rice",
+        image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=1000",
+        rating: 4.3,
+        category: "sushi",
+    },
+    {
+        id: 7,
+        name: "Caesar Salad",
+        price: 199,
+        description: "Fresh romaine lettuce with Caesar dressing, croutons, and parmesan cheese",
+        image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?q=80&w=1000",
+        rating: 4.4,
+        category: "salad",
+    },
+    {
+        id: 8,
+        name: "Chocolate Lava Cake",
+        price: 259,
+        description: "Warm chocolate cake with a molten chocolate center, served with vanilla ice cream",
+        image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1000",
+        rating: 4.9,
+        category: "dessert",
+    },
+    {
+        id: 9,
+        name: "Coca-Cola",
+        price: 59,
+        description: "Refreshing classic cola drink, served with ice",
+        image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1000",
+        rating: 4.2,
+        category: "drinks",
+    },
+    {
+        id: 10,
+        name: "Coca-Cola",
+        price: 59,
+        description: "Refreshing classic cola drink, served with ice",
+        image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1000",
+        rating: 4.2,
+        category: "drinks",
+    },
+
+    {
+        id: 11,
+        name: "Classic Pancake Breakfast",
+        price: 149,
+        description: "Fluffy pancakes served with maple syrup, butter, and a side of fresh fruits.",
+        image: "https://images.unsplash.com/photo-1677844592730-ce9c936d8f1a?q=80&w=2070",
+        rating: 4.7,
+        category: "breakfast",
+    },
+    {
+        id: 12,
+        name: "Vegetable Omelette",
+        price: 129,
+        description: "A healthy omelette made with eggs, fresh vegetables, and served with toast.",
+        image: "https://plus.unsplash.com/premium_photo-1667807521536-bc35c8d8b64b?q=80&w=2070",
+        rating: 4.6,
+        category: "breakfast",
+    },
+    {
+        id: 13,
+        name: "Tomato Basil Soup",
+        price: 99,
+        description: "A rich and creamy tomato soup with fresh basil and a hint of garlic.",
+        image: "https://images.unsplash.com/photo-1629978444632-9f63ba0eff47?q=80&w=2071",
+        rating: 4.5,
+        category: "soups",
+    },
+    {
+        id: 14,
+        name: "Chicken Noodle Soup",
+        price: 119,
+        description: "Classic homemade chicken soup with noodles, carrots, and celery.",
+        image: "https://images.unsplash.com/photo-1626200949817-4719bd60000b?q=80&w=1999",
+        rating: 4.8,
+        category: "soups",
+    },
+    {
+        id: 15,
+        name: "Double Cheeseburger 🍔",
+        discountPrice: 299,
+        discount: "-40%",
+        price: (() => {
+            const discountValue = Math.abs(parseInt("-40%"));
+            return 299 - (299 * discountValue / 100);
+        })(),
+        description: "A juicy, cheesy, and flavorful burger with a perfect balance of savory meat, creamy cheese, and crisp veggies.",
+        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1998",
+        rating: 4.8,
+        category: "offers",
+        key: "offers"
+    },
+    {
+        id: 16,
+        name: "Supreme Pizza! 🍕",
+        discountPrice: 499,
+        discount: "-30%",
+        price: (() => {
+            const discountValue = Math.abs(parseInt("-30%"));
+            return 499 - (499 * discountValue / 100);
+        })(),
+        description: "A Supreme Pizza is a loaded, flavorful pizza featuring a variety of meats, vegetables, and cheeses on a crispy, golden crust.",
+        image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=2070",
+        rating: 4.8,
+        category: "offers",
+        key: "offers",
+    },
+    {
+        id: 17,
+        name: "BBQ Chicken Pizza 🍕",
+        discountPrice: 299,
+        price: (() => {
+            const discountValue = Math.abs(parseInt("-15%"))
+            return 299 - (299 * discountValue / 100)
+        })(),
+        discount: "-15%",
+        description: "This delicious pizza features a crispy, golden crust topped.",
+        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981",
+        rating: 4.8,
+        category: "offers",
+        key: "offers"
+    }
+];
+
+export default foodItems;

@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors")
 const EmployeeModel = require('./models/Employee')
 const bcrypt = require("bcryptjs");
+const foodRoutes = require("./routes/foodRoutes"); // Import food routes
+
 // require('dotenv').config()
 // const jwt = require("jsonwebtoken");
 
@@ -10,16 +12,16 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-mongoose.connect("mongodb://localhost:27017/employee", {
+mongoose.connect("mongodb+srv://nikhilkumawat7689:nikhilkumawat7689@cluster0.euhw9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
     .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.error("MongoDB connection error:", err));
-
 app.get("/", (req, res) => {
     res.send("<h1>Hi</h1>");
 });
+
 
 // const JWT_SECRET = "your_secret_key"; 
 
@@ -106,4 +108,7 @@ app.put("/update_password", async (req, res) => {
         res.status(500).json({ error: "Server error" });
     }
 });
+
+// Register Food Routes
+app.use("/api", foodRoutes);
 app.listen(5000, () => console.log("Server running on port 5000"));
