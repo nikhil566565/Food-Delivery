@@ -1,6 +1,6 @@
 # 🍔 Food Delivery - MERN Stack Project
 
-### 🔗 Live Website: https://food-delivery-project-01.netlify.app/
+### 🔗 Live Website: food-delivery-pro.netlify.app
 This is a **Food Delivery Web Application** built using the **React Js**
 ## 📸 Screenshots
 
@@ -8,19 +8,19 @@ This is a **Food Delivery Web Application** built using the **React Js**
 ![Home Page](./frontend/myapp/src/Components/assets/Food-app-images/home.png)
 
 ### 🔹 Menu Page
-![Menu Page](./fronend/myapp/src/Components/assets/Food-app-images/menu.png)
+![Menu Page](./frontend/myapp/src/Components/assets/Food-app-images/menu.png)
 
 ### 🔹 About Us Page
-![About Us](./fronend/myapp/src/Components/assets/Food-app-images/about%20(2).png)
+![About Us](./frontend/myapp/src/Components/assets/Food-app-images/about.png)
 
 ### 🔹 Contact Page
-![About Us](./fronend/myapp/src/Components/assets/Food-app-images/contact.png)
+![About Us](./frontend/myapp/src/Components/assets/Food-app-images/contact.png)
 
 ### 🔹 Cart Page
-![About Us](./fronend/myapp/src/Components/assets/Food-app-images/cart.png)
+![About Us](./frontend/myapp/src/Components/assets/Food-app-images/cart.png)
 
 ### 🔹 Login Page
-![About Us](./fronend/myapp/src/Components/assets/Food-app-images/login.png)
+![About Us](./frontend/myapp/src/Components/assets/Food-app-images/login.png)
 
 ## 🚀 Installation & Setup
 
