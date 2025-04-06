@@ -48,6 +48,7 @@ function Login({ setIsAuthenticated }) {
                             onClose={() => setToast({ show: false })}
                         />
                     )}
+                    
                     <p className="login-title">Login</p>
                     <form className="login-form" onSubmit={handleSubmit} >
                         <div className="login-input-group">
