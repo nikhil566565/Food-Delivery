@@ -29,7 +29,7 @@ function Signup() {
             return;
         }
         try {
-            await axios.post("http://localhost:5000/employee", {
+            await axios.post("http://localhost:5000/adminsingup", {
                 username: username,
                 email: email,
                 password: password

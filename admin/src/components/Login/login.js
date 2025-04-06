@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import './login.css'
-import Signup from './Signup.js';
 import axios from "axios"
 import { useNavigate, Link } from "react-router-dom"
 import ToastNotification from '../toast-notification/toast.js';
 
-function Login({setIsAuthenticated}) {
+function Login({ setIsAuthenticated }) {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -14,13 +13,12 @@ function Login({setIsAuthenticated}) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // setError("")
         if (!email || !password) {
             setToast({ show: true, type: "error", message: "Please fill all fields!" })
             return;
         }
         try {
-            const response = await axios.post("http://localhost:5000/login", {
+            const response = await axios.post("http://localhost:5000/adminlogin", {
                 email,
                 password,
             })
@@ -53,8 +51,8 @@ function Login({setIsAuthenticated}) {
                     <p className="login-title">Login</p>
                     <form className="login-form" onSubmit={handleSubmit} >
                         <div className="login-input-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" name="username" id="username" autoComplete="username"
+                            <label htmlFor="email">Email</label>
+                            <input type="text" name="email" id="Email" autoComplete="email"
                                 value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className="login-input-group">
@@ -64,28 +62,21 @@ function Login({setIsAuthenticated}) {
                         </div>
                         <button className="login-sign">Sign in</button>
                     </form>
-                    <div className="login-social-message">
+                    {/* <div className="login-social-message">
                         <div className="login-line"></div>
                         <p className="message">Login with social accounts</p>
                         <div className="login-line"></div>
-                    </div>
-                    <div className="login-social-icons">
+                    </div> */}
+                    {/* <div className="login-social-icons">
                         <button aria-label="Log in with Google" className="login-icon">
                             <i className="fab fa-google text-red-500 w-5 h-5"></i>
-
                         </button>
                         <button aria-label="Log in with Twitter" className="login-icon">
                             <i className="fab fa-twitter text-blue-500 w-5 h-5"></i>
-
                         </button>
                         <button aria-label="Log in with GitHub" className="login-icon">
-
                         </button>
-                    </div>
-                    <p className="signup-option">
-                        Don't have an account?
-                        <Link to="/signup">Sign up</Link>
-                    </p>
+                    </div> */}
                 </div>
             </div>
         </>

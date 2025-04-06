@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/login" element={
           isAuthenticated ? <Navigate to="/" /> : <Login setIsAuthenticated={setIsAuthenticated} />
         } />
-        <Route path="/signup" element={<><Signup /> </>} />
+        {/* <Route path="/signup" element={<><Signup /> </>} /> */}
 
         {isAuthenticated && (
           <>

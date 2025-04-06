@@ -2,33 +2,35 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors")
 const EmployeeModel = require('./models/Employee')
+const AdminModel = require('./models/admin')
 const bcrypt = require("bcryptjs");
-const foodRoutes = require("./routes/foodRoutes"); // Import food routes
+const foodRoutes = require("./routes/foodRoutes")
+
+
+// ************************************************** Admin Login Credentials **************************************************
+// admin Email : admin123@gmail.com
+// admin Password : admin123
+
 
 require('dotenv').config()
-// const jwt = require("jsonwebtoken");
 
 const app = express();
 app.use(express.json());
 app.use(cors())
 
-    mongoose.connect(process.env.MONGO_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
     .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.error("MongoDB connection error:", err));
 app.get("/", (req, res) => {
     res.send("<h1>Hi</h1>");
 });
 
-
-// const JWT_SECRET = "your_secret_key"; 
-
-// Signup Page
+//  User Signup Page
 app.post("/employee", async (req, res) => {
     try {
-        // Create a new user
         const { username, email, password } = req.body
 
         // Check if user already exists
@@ -48,14 +50,64 @@ app.post("/employee", async (req, res) => {
         res.status(500).json({ error: "Server Error" });
     }
 });
-
-// Login Page
+// User Login Page
 app.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body
 
         // Find user by email
         const employee = await EmployeeModel.findOne({ email })
+        // If user not exist
+        if (!employee) {
+            return res.status(404).json({ error: "User not found" })
+        }
+        const isMatch = await bcrypt.compare(password, employee.password);
+        if (!isMatch) {
+            return res.status(401).json({ error: "Invalid password" });
+        }
+
+        // Successful login
+        res.json({
+            message: "Login successful",
+            user: {
+                id: employee._id,
+                username: employee.username,
+                email: employee.email,
+            },
+        })
+    } catch (err) {
+        res.status(500).json({ error: "Server error" })
+    }
+})
+// Admin Signup Page
+app.post("/adminsingup", async (req, res) => {
+    try {
+        const { username, email, password } = req.body
+
+        // Check if user already exists
+        const existingUser = await AdminModel.findOne({ email });
+        if (existingUser) return res.status(400).json({ error: "Email already registered" });
+
+        const hasedPass = await bcrypt.hash(password, 10)
+
+        const newUser = new AdminModel({ username, email, password: hasedPass, })
+        await newUser.save()
+        // console.log("new user registered successfully...")
+        res.status(201).json({ message: "New user registered successfully" });
+
+    }
+    catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Server Error" });
+    }
+});
+// Admin Login Page
+app.post("/adminlogin", async (req, res) => {
+    try {
+        const { email, password } = req.body
+
+        // Find user by email
+        const employee = await AdminModel.findOne({ email })
         // If user not exist
         if (!employee) {
             return res.status(404).json({ error: "User not found" })
