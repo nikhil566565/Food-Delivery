@@ -28,20 +28,14 @@ This is a **Food Delivery Web Application** built using the **React Js**
 ```sh
 git clone https://github.com/nikhil566565/Food-Delivery.git
 ```
-
-### 2️⃣ Navigate to the project folder:
-```sh
-cd Food-Delivery
-```
-
-### 3️⃣ Install dependencies:
+### 2️⃣ Install dependencies:
 ```sh
 npm install
 npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 
 ```
 
-### 4️⃣ Start the development server:
+### 3️⃣ Start the development server:
 ```sh
 npm start
 ```
